@@ -204,7 +204,7 @@ export default function DealsPage() {
             🔥 Tổng hợp đơn Seeding 🔥
           </h2>
           <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Vui lòng liên hệ seller để nhận việc.
+            Liên hệ Seller để nhận công việc.
           </p>
         </div>
 
