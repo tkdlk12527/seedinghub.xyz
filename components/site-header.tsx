@@ -31,7 +31,7 @@ export function SiteHeader() {
                 />
               </div>
               <div className="hidden lg:block">
-                <h3 className="font-semibold text-gray-800 text-xs">Tham gia nhóm Telegram</h3>
+                <h3 className="font-semibold text-gray-800 text-xs">Telegram</h3>
                 <p className="text-xs text-gray-600">Gom các đơn seeding</p>
               </div>
               <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer">
@@ -56,7 +56,7 @@ export function SiteHeader() {
                 />
               </div>
               <div className="hidden lg:block">
-                <h3 className="font-semibold text-gray-800 text-xs">Thích trang Fanpage</h3>
+                <h3 className="font-semibold text-gray-800 text-xs">Page FB</h3>
                 <p className="text-xs text-gray-600">Cập nhật tin tức</p>
               </div>
               <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer">
