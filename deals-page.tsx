@@ -164,10 +164,12 @@ export default function DealsPage() {
           }, 5000)
         } else {
           // Deal not found, show error message
-          setError(`Deal với ID "${highlight}" không tìm thấy.`)
+          setError(
+            `Deal với ID "${highlight}" không tìm thấy. Có thể liên kết đã cũ hoặc không đúng.`,
+          )
           setTimeout(() => {
             router.replace("/", { scroll: false })
-          }, 3000)
+          }, 5000)
         }
       }, 500)
     }

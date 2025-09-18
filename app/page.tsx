@@ -1,10 +1,7 @@
-import DealsPage from "../deals-page"
-import { Suspense } from "react"
+// This file redirects the root URL (/) to /d
+import { redirect } from 'next/navigation'
 
 export default function Page() {
-  return (
-    <Suspense fallback={<div>Đang tải...</div>}>
-      <DealsPage />
-    </Suspense>
-  )
+  redirect('/d')
+  return null
 }

@@ -1,12 +1,10 @@
-import { redirect } from "next/navigation"
+import DealsPage from "../deals-page"
+import { Suspense } from "react"
 
-interface PageProps {
-  params: {
-    shortId: string
-  }
-}
-
-export default function Page({ params }: PageProps) {
-  // Redirect to main page with the shortId as a query parameter
-  redirect(`/?highlight=${params.shortId}`)
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <DealsPage />
+    </Suspense>
+  )
 }
