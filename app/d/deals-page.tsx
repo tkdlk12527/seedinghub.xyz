@@ -160,7 +160,7 @@ export default function DealsPage() {
           setTimeout(() => {
             setHighlightedDeal(null)
             // Clean up URL
-            router.replace("/", { scroll: false })
+            router.replace("/d", { scroll: false })
           }, 5000)
         } else {
           // Deal not found, show error message
@@ -168,7 +168,7 @@ export default function DealsPage() {
             `Deal với ID "${highlight}" không tìm thấy. Có thể liên kết đã cũ hoặc không đúng.`,
           )
           setTimeout(() => {
-            router.replace("/", { scroll: false })
+            router.replace("/d", { scroll: false })
           }, 5000)
         }
       }, 500)
