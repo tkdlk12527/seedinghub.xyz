@@ -1,21 +1,41 @@
 "use client"
-import DealsPage from "./../deals-page"
-import { useEffect } from "react"
-import { useParams, useRouter, useSearchParams } from "next/navigation"
 
-export default function Page() {
+import { useEffect } from "react"
+import { useParams, useRouter } from "next/navigation"
+
+export default function ShortIdRedirectPage() {
   const params = useParams()
   const router = useRouter()
-  const searchParams = useSearchParams()
+  const shortId = params?.shortId as string
 
-  // When visiting /d/[shortId], update the query param to highlight the deal
   useEffect(() => {
-    if (params?.shortId && searchParams.get("highlight") !== params.shortId) {
-      // Replace the URL with the highlight param, but stay on /d/[shortId]
-      const url = `/d/${params.shortId}?highlight=${params.shortId}`
-      router.replace(url, { scroll: false })
+    if (shortId) {
+      const getPageAndRedirect = async () => {
+        try {
+          const response = await fetch(`/api/d/position/${shortId}`)
+          if (!response.ok) {
+            // If deal is not found, redirect to the first page of deals
+            router.replace(`/d?error=notfound&id=${shortId}`)
+            return
+          }
+          const { page } = await response.json()
+          router.replace(`/d?page=${page}&highlight=${shortId}`)
+        } catch (error) {
+          // In case of any other error, redirect to the base deals page
+          router.replace('/d')
+        }
+      }
+      getPageAndRedirect()
     }
-  }, [params, router, searchParams])
+  }, [shortId, router])
 
-  return <DealsPage />
+  // Render a loading state while the redirect is happening
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+        <p className="text-gray-600">Đang tìm deal...</p>
+      </div>
+    </div>
+  )
 }
