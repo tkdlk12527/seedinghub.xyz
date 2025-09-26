@@ -15,7 +15,7 @@ export function DealStats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch("/api/deals/stats")
+        const response = await fetch("/api/d/stats")
         if (response.ok) {
           const data = await response.json()
           setStats(data)

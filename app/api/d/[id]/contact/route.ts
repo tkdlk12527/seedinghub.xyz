@@ -6,9 +6,9 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, context: { params: { id: string } }) {
   try {
-    const dealId = params.id
+    const dealId = context.params.id
 
     // First, get the current displayedViews value
     const { data: currentData, error: fetchError } = await supabase
