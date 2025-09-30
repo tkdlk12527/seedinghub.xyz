@@ -143,7 +143,7 @@ export function SiteHeader() {
               </div>
             </Link>
 
-            /* Facebook Icon (1 column) */}
+            {/* Facebook Icon (1 column) */}
             <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer" className="flex justify-center">
               <div className="w-9 h-9 bg-gradient-to-br from-[#1877F2] to-[#166FE5] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                 <img
