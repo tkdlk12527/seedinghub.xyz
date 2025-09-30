@@ -111,6 +111,7 @@ export function SiteHeader() {
               </div>
             </Link>
 
+            {/* hiện thị đêm thống kê
             {loading ? (
               <>
                 <div className="animate-pulse bg-gray-200 rounded-lg p-2 w-12 h-12"></div>
@@ -118,18 +119,18 @@ export function SiteHeader() {
               </>
             ) : (
               <>
-                {/* Today's Deals Icon (1 column) */}
+                {/* Today's Deals Icon (1 column)
                 <div className="flex flex-col items-center bg-green-50 rounded-lg p-2 border border-green-100 shadow-sm min-w-[50px]">
                   <div className="text-xs font-bold text-green-700">{stats.todayDeals} Deal mới</div>
                 </div>
 
-                {/* Total Deals Icon (1 column) */}
+                {/* Total Deals Icon (1 column)
                 <div className="flex flex-col items-center bg-purple-50 rounded-lg p-2 border border-purple-100 shadow-sm min-w-[50px]">
                   <TrendingUp className="w-4 h-4 text-purple-600 mb-1" />
                   <div className="text-xs font-bold text-purple-700">{stats.totalDeals} Deal</div>
                 </div>
               </>
-            )}
+            )} */}
 
             {/* Telegram Icon (1 column) */}
             <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
@@ -142,7 +143,7 @@ export function SiteHeader() {
               </div>
             </Link>
 
-            {/* Facebook Icon (1 column) */}
+            /* Facebook Icon (1 column) */}
             <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer" className="flex justify-center">
               <div className="w-9 h-9 bg-gradient-to-br from-[#1877F2] to-[#166FE5] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                 <img
@@ -159,12 +160,12 @@ export function SiteHeader() {
             <div className="flex items-center gap-4 text-xs text-gray-600">
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Cập nhật liên tục</span>
+                <span>{stats.todayDeals} deal hôm nay</span>
               </div>
               <div className="w-px h-3 bg-gray-300"></div>
               <div className="flex items-center gap-1">
                 <TrendingUp className="w-3 h-3 text-blue-500" />
-                <span>Deals mới nhất</span>
+                <span>{stats.totalDeals} công việc</span>
               </div>
             </div>
           </div>
