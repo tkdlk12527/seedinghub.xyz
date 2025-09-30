@@ -4,38 +4,10 @@ import Link from "next/link"
 import { ArrowRight, Heart, Calendar, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DealStats } from "./deal-stats"
-import { useState, useEffect } from "react"
-
-interface IMobileDealStats {
-  totalDeals: number
-  todayDeals: number
-}
+import { useStats } from "@/contexts/stats-provider"
 
 export function SiteHeader() {
-  const [stats, setStats] = useState<IMobileDealStats>({ totalDeals: 0, todayDeals: 0 })
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch("/api/d/stats")
-        if (response.ok) {
-          const data = await response.json()
-          setStats(data)
-        }
-      } catch (error) {
-        console.error("Failed to fetch deal stats:", error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchStats()
-
-    const interval = setInterval(fetchStats, 3600000) // Poll every 60 minutes
-
-    return () => clearInterval(interval)
-  }, [])
+  const { stats, loading } = useStats()
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-gray-200">
@@ -111,26 +83,7 @@ export function SiteHeader() {
               </div>
             </Link>
 
-            {/* hiện thị đêm thống kê
-            {loading ? (
-              <>
-                <div className="animate-pulse bg-gray-200 rounded-lg p-2 w-12 h-12"></div>
-                <div className="animate-pulse bg-gray-200 rounded-lg p-2 w-12 h-12"></div>
-              </>
-            ) : (
-              <>
-                {/* Today's Deals Icon (1 column)
-                <div className="flex flex-col items-center bg-green-50 rounded-lg p-2 border border-green-100 shadow-sm min-w-[50px]">
-                  <div className="text-xs font-bold text-green-700">{stats.todayDeals} Deal mới</div>
-                </div>
 
-                {/* Total Deals Icon (1 column)
-                <div className="flex flex-col items-center bg-purple-50 rounded-lg p-2 border border-purple-100 shadow-sm min-w-[50px]">
-                  <TrendingUp className="w-4 h-4 text-purple-600 mb-1" />
-                  <div className="text-xs font-bold text-purple-700">{stats.totalDeals} Deal</div>
-                </div>
-              </>
-            )} */}
 
             {/* Telegram Icon (1 column) */}
             <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
@@ -138,6 +91,17 @@ export function SiteHeader() {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
                   alt="Telegram"
+                  className="w-5 h-5"
+                />
+              </div>
+            </Link>
+            
+            {/* Zalo Icon (1 column) */}
+            <Link href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+              <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
+                  alt="Zalo"
                   className="w-5 h-5"
                 />
               </div>

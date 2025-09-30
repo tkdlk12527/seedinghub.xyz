@@ -1,39 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { TrendingUp, Calendar } from "lucide-react"
-
-interface DealStats {
-  totalDeals: number
-  todayDeals: number
-}
+import { useStats } from "@/contexts/stats-provider"
 
 export function DealStats() {
-  const [stats, setStats] = useState<DealStats>({ totalDeals: 0, todayDeals: 0 })
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch("/api/d/stats")
-        if (response.ok) {
-          const data = await response.json()
-          setStats(data)
-        }
-      } catch (error) {
-        console.error("Failed to fetch deal stats:", error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchStats()
-
-    // Update stats every 30 seconds for real-time updates
-    const interval = setInterval(fetchStats, 30000)
-
-    return () => clearInterval(interval)
-  }, [])
+  const { stats, loading } = useStats()
 
   if (loading) {
     return (

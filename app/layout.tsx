@@ -10,6 +10,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { usePathname } from "next/navigation"
+import { StatsProvider } from "@/contexts/stats-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,11 +26,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="flex min-h-screen flex-col">
-            {!isHomePage && <SiteHeader />}
-            <main className="flex-1">{children}</main>
-            {!isHomePage && <SiteFooter />}
-          </div>
+          <StatsProvider>
+            <div className="flex min-h-screen flex-col">
+              {!isHomePage && <SiteHeader />}
+              <main className="flex-1">{children}</main>
+              {!isHomePage && <SiteFooter />}
+            </div>
+          </StatsProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
