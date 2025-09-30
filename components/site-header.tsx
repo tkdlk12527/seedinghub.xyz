@@ -105,8 +105,8 @@ export function SiteHeader() {
           {/* Main Header Row */}
           <div className="grid grid-cols-6 gap-2 items-center py-1">
             {/* Left: Logo (2 columns) */}
-            <Link href="/" className="col-span-2 flex items-center">
-              <div className="w-22 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+            <Link href="/d" className="col-span-2 flex items-center">
+              <div className="w-24 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-base">SeedingHub</span>
               </div>
             </Link>
@@ -120,14 +120,13 @@ export function SiteHeader() {
               <>
                 {/* Today's Deals Icon (1 column) */}
                 <div className="flex flex-col items-center bg-green-50 rounded-lg p-2 border border-green-100 shadow-sm min-w-[50px]">
-                  <Calendar className="w-4 h-4 text-green-600 mb-1" />
-                  <div className="text-xs font-bold text-green-700">{stats.todayDeals}</div>
+                  <div className="text-xs font-bold text-green-700">{stats.todayDeals} Deal mới</div>
                 </div>
 
                 {/* Total Deals Icon (1 column) */}
                 <div className="flex flex-col items-center bg-purple-50 rounded-lg p-2 border border-purple-100 shadow-sm min-w-[50px]">
                   <TrendingUp className="w-4 h-4 text-purple-600 mb-1" />
-                  <div className="text-xs font-bold text-purple-700">{stats.totalDeals}</div>
+                  <div className="text-xs font-bold text-purple-700">{stats.totalDeals} Deal</div>
                 </div>
               </>
             )}
