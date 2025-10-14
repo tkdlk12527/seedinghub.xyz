@@ -79,7 +79,7 @@ export function SiteHeader() {
             {/* Left: Logo */}
             <div className="flex justify-center">
                 <Link href="/d" className="flex items-center">
-                <div className="w-30 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-40 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-base">SeedingHub</span>
                 </div>
                 </Link>
