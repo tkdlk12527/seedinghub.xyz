@@ -75,48 +75,51 @@ export function SiteHeader() {
         {/* Mobile Layout - Optimized Icons */}
         <div className="md:hidden">
           {/* Main Header Row */}
-          <div className="grid grid-cols-6 gap-2 items-center py-1">
-            {/* Left: Logo (2 columns) */}
-            <Link href="/d" className="col-span-2 flex items-center">
-              <div className="w-24 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-base">SeedingHub</span>
-              </div>
-            </Link>
+          <div className="grid grid-cols-2 items-center py-1">
+            {/* Left: Logo */}
+            <div className="flex justify-start">
+                <Link href="/d" className="flex items-center">
+                <div className="w-24 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-base">SeedingHub</span>
+                </div>
+                </Link>
+            </div>
 
+            {/* Right: Social Icons */}
+            <div className="flex justify-end items-center gap-2">
+                {/* Telegram Icon */}
+                <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
+                    alt="Telegram"
+                    className="w-5 h-5"
+                    />
+                </div>
+                </Link>
+                
+                {/* Zalo Icon */}
+                <Link href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
+                    alt="Zalo"
+                    className="w-5 h-5"
+                    />
+                </div>
+                </Link>
 
-
-            {/* Telegram Icon (1 column) */}
-            <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
-                  alt="Telegram"
-                  className="w-5 h-5"
-                />
-              </div>
-            </Link>
-            
-            {/* Zalo Icon (1 column) */}
-            <Link href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer" className="flex justify-center">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
-                  alt="Zalo"
-                  className="w-5 h-5"
-                />
-              </div>
-            </Link>
-
-            {/* Facebook Icon (1 column) */}
-            <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer" className="flex justify-center">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#1877F2] to-[#166FE5] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
-                  alt="Facebook"
-                  className="w-5 h-5"
-                />
-              </div>
-            </Link>
+                {/* Facebook Icon */}
+                <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#1877F2] to-[#166FE5] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
+                    alt="Facebook"
+                    className="w-5 h-5"
+                    />
+                </div>
+                </Link>
+            </div>
           </div>
 
           {/* Optional: Quick Stats Bar */}

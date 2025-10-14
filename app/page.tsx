@@ -57,7 +57,7 @@ export default function ComingSoonPage() {
             <Button asChild className="flex items-center gap-2">
               <a href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4" />
-                Nhóm seeding Telegram
+                Nhóm Telegram
               </a>
             </Button>
             <Button asChild variant="outline" className="flex items-center gap-2 bg-transparent">
@@ -67,9 +67,9 @@ export default function ComingSoonPage() {
               </a>
             </Button>
             <Button asChild variant="secondary" className="flex items-center gap-2">
-              <a href="https://zalo.me/0902484767" target="_blank" rel="noopener noreferrer">
+              <a href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer">
                 <Phone className="h-4 w-4" />
-                Zalo
+                Nhóm Zalo
               </a>
             </Button>
           </div>
