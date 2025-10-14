@@ -77,7 +77,7 @@ export function SiteHeader() {
           {/* Main Header Row */}
           <div className="grid grid-cols-2 items-center py-1">
             {/* Left: Logo */}
-            <div className="flex justify-start">
+            <div className="flex justify-center">
                 <Link href="/d" className="flex items-center">
                 <div className="w-24 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-base">SeedingHub</span>
@@ -86,7 +86,7 @@ export function SiteHeader() {
             </div>
 
             {/* Right: Social Icons */}
-            <div className="flex justify-end items-center gap-2">
+            <div className="grid grid-cols-3 gap-1 items-center">
                 {/* Telegram Icon */}
                 <Link href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
