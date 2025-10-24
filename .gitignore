@@ -26,5 +26,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#B:\Project\seedinghub.vn-deals\scripts
+#\scripts
 /scripts
+
+/thamkhao

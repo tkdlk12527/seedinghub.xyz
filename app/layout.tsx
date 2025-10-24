@@ -15,6 +15,16 @@ import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// THÊM MỚI: Định nghĩa metadata cho trang web của bạn
+export const metadata: Metadata = {
+  title: "Cộng đồng seeding Shopee", // Bạn có thể thêm title ở đây
+  description: "Cộng đồng seeding Shopee", // Mô tả bạn yêu cầu
+  icons: {
+    icon: "public/seedinghub-favi.jpg", // Đường dẫn tới favicon (tính từ thư mục 'public')
+    shortcut: "public/seedinghub-favi.jpg", // Đường dẫn tới favicon (tính từ thư mục 'public')
+  },
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{

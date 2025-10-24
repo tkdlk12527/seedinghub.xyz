@@ -41,7 +41,7 @@ export function SiteHeader() {
                   size="sm"
                   className="bg-[#0088CC] hover:bg-[#0077B3] text-white flex items-center gap-1 text-xs px-2 py-1"
                 >
-                  <span className="hidden md:inline">Tham gia nhóm Telegram</span>
+                  <span className="hidden md:inline">nhóm Telegram</span>
                   <span className="md:hidden">Join</span>
                   <ArrowRight className="w-3 h-3" />
                 </Button>
@@ -58,14 +58,14 @@ export function SiteHeader() {
                 />
               </div>
               
-              <Link href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.facebook.com/groups/seedingreviewer" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="sm"
                   className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-1 text-xs px-2 py-1"
                 >
                   <Heart className="w-3 h-3" />
-                  <span className="hidden md:inline">Theo dõi Page</span>
-                  <span className="md:hidden">Like</span>
+                  <span className="hidden md:inline">Nhóm Facebook</span>
+                  <span className="md:hidden">Tham gia</span>
                 </Button>
               </Link>
             </div>
