@@ -8,11 +8,12 @@
 import dealsIndex from "@/data/deals-index.json"
 
 export interface RawDeal {
-  deal_id: string
-  Content: string
-  displayedViews: number
-  "Link Facebook": string
-  created_at: string
+  id: number
+  messenger_id?: string
+  profilePic?: string
+  text: string
+  url: string
+  time: string
 }
 
 export interface Deal {
@@ -21,6 +22,8 @@ export interface Deal {
   contact_count: number
   facebook_link: string
   created_at: string
+  profilePic?: string
+  messenger_id?: string
 }
 
 // Cast một lần duy nhất ở module level
@@ -37,20 +40,22 @@ export function getAllDeals(): RawDeal[] {
  * Tìm một deal theo deal_id
  */
 export function getDealById(id: string): RawDeal | undefined {
-  return DEALS.find((d) => d.deal_id === id)
+  return DEALS.find((d) => d.id.toString() === id)
 }
 
 /**
  * Transform RawDeal sang Deal (thêm random offset cho contact_count)
  */
 export function transformDeal(deal: RawDeal): Deal {
-  const baseContactCount = deal.displayedViews || 0
+  const baseContactCount = 0
   const randomOffset = Math.floor(Math.random() * (50 - 20 + 1)) + 20
   return {
-    deal_id: deal.deal_id,
-    content: deal.Content,
+    deal_id: deal.id.toString(),
+    content: deal.text,
     contact_count: baseContactCount + randomOffset,
-    facebook_link: deal["Link Facebook"],
-    created_at: deal.created_at,
+    facebook_link: deal.url,
+    created_at: deal.time,
+    profilePic: deal.profilePic,
+    messenger_id: deal.messenger_id,
   }
 }

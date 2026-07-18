@@ -19,7 +19,7 @@ function computeStats(deals: RawDeal[]): IDealStats {
   const tomorrowVN = new Date(todayVN.getTime() + 24 * 60 * 60 * 1000)
 
   const todayDeals = deals.filter((deal) => {
-    const createdAt = new Date(deal.created_at)
+    const createdAt = new Date(deal.time)
     return createdAt >= todayVN && createdAt < tomorrowVN
   }).length
 

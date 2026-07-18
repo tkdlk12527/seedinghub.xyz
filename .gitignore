@@ -31,3 +31,6 @@ next-env.d.ts
 data/deals-index.json
 
 /thamkhao
+
+#agent
+.agent
