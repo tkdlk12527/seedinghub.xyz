@@ -2,11 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function SiteFooter() {
   return (
-<<<<<<< HEAD
-    <footer className="bg-gradient-to-r from-slate-50 to-blue-50 border-t border-blue-100 py-8">
-=======
-    <footer className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-[#0d1321] dark:to-[#0b0f19] border-t border-blue-100 dark:border-gray-800/80 py-6 transition-colors duration-300">
->>>>>>> 79e2b0fc764313da7f6c08e083126eec6cbd6b2d
+    <footer className="bg-gradient-to-r from-slate-50 to-blue-50 dark:from-[#0d1321] dark:to-[#0b0f19] border-t border-blue-100 dark:border-gray-800/80 py-8 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
@@ -25,22 +21,15 @@ export function SiteFooter() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden shadow-md z-10 flex-shrink-0">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
-                  alt="Facebook"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-10 h-10 rounded-full border-2 border-white bg-white overflow-hidden shadow-md z-10 flex-shrink-0 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 fill-[#1877F2]">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
               </div>
             </div>
             <div>
-<<<<<<< HEAD
-              <h3 className="font-semibold text-gray-800 text-base">Tổng hợp đơn seeding liên tục</h3>
-              <p className="text-sm text-gray-600">Tham gia cộng đồng để không bỏ lỡ các công việc mới nhất</p>
-=======
-              <h3 className="font-semibold text-gray-800 dark:text-gray-200 text-base">Tổng hợp đơn seeding</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">liên tục trong nhóm</p>
->>>>>>> 79e2b0fc764313da7f6c08e083126eec6cbd6b2d
+              <h3 className="font-semibold text-gray-800 dark:text-gray-200 text-base">Tổng hợp đơn seeding liên tục</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Tham gia cộng đồng để không bỏ lỡ các công việc mới nhất</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -66,11 +55,9 @@ export function SiteFooter() {
             </a>
             <a href="https://www.facebook.com/groups/2542746036079186/" target="_blank" rel="noopener noreferrer">
               <Button className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-2 px-4 py-2 text-sm rounded-lg shadow-sm font-medium">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
-                  alt="Facebook"
-                  className="w-4 h-4"
-                />
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
                 Nhóm Facebook
               </Button>
             </a>
