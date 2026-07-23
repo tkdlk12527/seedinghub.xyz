@@ -15,7 +15,7 @@ export default function ShortIdRedirect() {
       return
     }
 
-    const index = ALL_DEALS.findIndex((d) => d.deal_id === shortId)
+    const index = ALL_DEALS.findIndex((d) => d.id.toString() === shortId)
 
     if (index === -1) {
       navigate(`/?error=notfound&id=${shortId}`, { replace: true })

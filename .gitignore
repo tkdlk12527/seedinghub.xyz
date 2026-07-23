@@ -28,6 +28,11 @@ next-env.d.ts
 
 
 # generated files
-data/deals-index.json
+src/data/deals-index.json
 
 /thamkhao
+
+#agent
+.agent
+
+src/data/deals

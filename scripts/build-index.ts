@@ -31,7 +31,7 @@ const deals = files.flatMap((f) => {
 // Sắp xếp từ mới nhất đến cũ nhất
 deals.sort(
   (a, b) =>
-    new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    new Date(b.time).getTime() - new Date(a.time).getTime()
 )
 
 fs.writeFileSync(INDEX_FILE, JSON.stringify(deals, null, 2), "utf-8")

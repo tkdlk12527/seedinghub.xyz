@@ -4,6 +4,7 @@ import { DealCard } from "@/components/deal-card"
 import { Button } from "@/components/ui/button"
 import { getAllDeals, transformDeal, Deal } from "@/lib/deals"
 import { Suspense } from "react"
+import { ArrowUp } from "lucide-react"
 
 // Semua deals sudah di-transform sekali dengan random offset stabil per sesi
 const ALL_DEALS: Deal[] = getAllDeals().map(transformDeal)
@@ -25,6 +26,24 @@ function DealsPageInner() {
       ? `Deal với ID "${errorId}" không tìm thấy. Có thể liên kết đã cũ hoặc không đúng.`
       : null
   )
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  // Listen to window scroll to show/hide "Back to top" button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true)
+      } else {
+        setShowScrollTop(false)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   const hasMore = visibleCount < ALL_DEALS.length
   const visibleDeals = ALL_DEALS.slice(0, visibleCount)
@@ -84,30 +103,30 @@ function DealsPageInner() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0b0f19] transition-colors duration-300">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             🔥 Tổng hợp đơn Seeding 🔥
           </h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             Liên hệ Seller để nhận công việc.
           </p>
         </div>
-
+ 
         {error && (
-          <div className="text-center py-12 text-red-600">
+          <div className="text-center py-12 text-red-600 dark:text-red-400">
             <p>Lỗi: {error}</p>
             <Button onClick={() => navigate("/")} className="mt-4">
               Quay lại trang chính
             </Button>
           </div>
         )}
-
+ 
         {!error && (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {deals.map((deal, index) => {
+               {deals.map((deal, index) => {
                 const isLast = deals.length === index + 1
                 return (
                   <div ref={isLast ? lastDealElementRef : null} key={deal.deal_id}>
@@ -120,28 +139,38 @@ function DealsPageInner() {
                 )
               })}
             </div>
-
+ 
             {hasMore && (
               <div className="text-center py-12">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4" />
-                <p className="text-gray-600">Đang tải thêm...</p>
+                <p className="text-gray-600 dark:text-gray-400">Đang tải thêm...</p>
               </div>
             )}
-
+ 
             {!hasMore && deals.length > 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500">Bạn đã xem hết tất cả các deal.</p>
+                <p className="text-gray-500 dark:text-gray-400">Bạn đã xem hết tất cả các deal.</p>
               </div>
             )}
-
+ 
             {deals.length === 0 && !error && (
               <div className="text-center py-12">
-                <p className="text-gray-500">Chưa có deal nào được đăng.</p>
+                <p className="text-gray-500 dark:text-gray-400">Chưa có deal nào được đăng.</p>
               </div>
             )}
           </>
         )}
       </div>
+
+      {showScrollTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg active:scale-95 transition-transform flex items-center justify-center p-0 z-50 border border-blue-500"
+          title="Cuộn lên đầu trang"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </Button>
+      )}
     </div>
   )
 }
