@@ -23,10 +23,10 @@ export function SiteHeader() {
           </div>
 
           {/* CTA Boxes - Right Side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Telegram CTA Box */}
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg px-3 py-2 border border-blue-100 shadow-sm">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
+              <div className="flex-shrink-0 w-5 h-5 rounded-full overflow-hidden">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
                   alt="Telegram"
@@ -34,21 +34,43 @@ export function SiteHeader() {
                 />
               </div>
               
-              <a href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/+Hqiyu9DN-tg1OWU1" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="sm"
                   className="bg-[#0088CC] hover:bg-[#0077B3] text-white flex items-center gap-1 text-xs px-2 py-1"
                 >
-                  <span className="hidden md:inline">nhóm Telegram</span>
-                  <span className="md:hidden">Join</span>
+                  <span className="hidden lg:inline">nhóm Telegram</span>
+                  <span className="lg:hidden">Telegram</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Button>
+              </a>
+            </div>
+
+            {/* Zalo CTA Box */}
+            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-sky-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
+              <div className="flex-shrink-0 w-5 h-5 rounded-full overflow-hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
+                  alt="Zalo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <a href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="sm"
+                  className="bg-[#0068FF] hover:bg-[#0050C8] text-white flex items-center gap-1 text-xs px-2 py-1"
+                >
+                  <span className="hidden lg:inline">nhóm Zalo</span>
+                  <span className="lg:hidden">Zalo</span>
                   <ArrowRight className="w-3 h-3" />
                 </Button>
               </a>
             </div>
 
             {/* Facebook CTA Box */}
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg px-3 py-2 border border-blue-100 shadow-sm">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
+              <div className="flex-shrink-0 w-5 h-5 rounded-full overflow-hidden">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
                   alt="Facebook"
@@ -56,14 +78,14 @@ export function SiteHeader() {
                 />
               </div>
               
-              <a href="https://www.facebook.com/groups/seedingreviewer" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/groups/2542746036079186/" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="sm"
                   className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-1 text-xs px-2 py-1"
                 >
                   <Heart className="w-3 h-3" />
-                  <span className="hidden md:inline">Nhóm Facebook</span>
-                  <span className="md:hidden">Tham gia</span>
+                  <span className="hidden lg:inline">Nhóm Facebook</span>
+                  <span className="lg:hidden">Facebook</span>
                 </Button>
               </a>
             </div>
@@ -86,7 +108,7 @@ export function SiteHeader() {
             {/* Right: Social Icons */}
             <div className="grid grid-cols-3 gap-1 items-center">
                 {/* Telegram Icon */}
-                <a href="https://t.me/+UzSS1v4tWLlhMjU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <a href="https://t.me/+Hqiyu9DN-tg1OWU1" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
@@ -98,7 +120,7 @@ export function SiteHeader() {
                 
                 {/* Zalo Icon */}
                 <a href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer" className="flex justify-center">
-                <div className="w-9 h-9 bg-gradient-to-br from-[#0088CC] to-[#0077B3] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#0068FF] to-[#0050C8] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
                     alt="Zalo"
@@ -108,7 +130,7 @@ export function SiteHeader() {
                 </a>
 
                 {/* Facebook Icon */}
-                <a href="https://www.facebook.com/seedinghub.vn" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <a href="https://www.facebook.com/groups/2542746036079186/" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <div className="w-9 h-9 bg-gradient-to-br from-[#1877F2] to-[#166FE5] rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png"
