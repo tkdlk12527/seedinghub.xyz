@@ -9,6 +9,7 @@ import dealsIndex from "@/data/deals-index.json"
 
 export interface RawDeal {
   id: number
+  user_id?: string
   messenger_id?: string
   profilePic?: string
   text: string
@@ -24,6 +25,7 @@ export interface Deal {
   created_at: string
   profilePic?: string
   messenger_id?: string
+  user_id?: string
 }
 
 // Cast một lần duy nhất ở module level
@@ -57,5 +59,6 @@ export function transformDeal(deal: RawDeal): Deal {
     created_at: deal.time,
     profilePic: deal.profilePic,
     messenger_id: deal.messenger_id,
+    user_id: deal.user_id,
   }
 }

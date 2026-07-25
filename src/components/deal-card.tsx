@@ -11,6 +11,7 @@ export interface Deal {
   created_at: string
   profilePic?: string
   messenger_id?: string
+  user_id?: string
 }
 
 export const DealCard = ({
@@ -26,7 +27,7 @@ export const DealCard = ({
     e.preventDefault()
     e.stopPropagation()
 
-    const contactLink = deal.messenger_id || deal.facebook_link
+    const contactLink = deal.user_id ? `https://m.me/${deal.user_id}` : deal.facebook_link
     if (contactLink) {
       try {
         onContactClick(deal.deal_id)
@@ -87,7 +88,7 @@ export const DealCard = ({
           </div>
         </div>
         <div className="mb-4">
-          <p className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed whitespace-pre-line">{deal.content}</p>
+          <p className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed whitespace-pre-line line-clamp-5">{deal.content}</p>
         </div>
       </div>
       <div className="flex items-center justify-between pt-2 border-t border-gray-50 dark:border-gray-800/60">
@@ -115,11 +116,11 @@ export const DealCard = ({
             size="sm"
             className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1.5 h-auto rounded-md flex items-center"
             onClick={handleContactClick}
-            disabled={!deal.messenger_id && !deal.facebook_link}
+            disabled={!deal.user_id && !deal.facebook_link}
             type="button"
           >
             <ExternalLink className="w-3 h-3 mr-1" />
-            {deal.messenger_id ? "Ib Messenger" : "Liên hệ Seller"}
+            {deal.user_id ? "Ib Messenger" : "Liên hệ Seller"}
           </Button>
         </div>
       </div>

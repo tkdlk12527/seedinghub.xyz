@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { ArrowRight, Heart, TrendingUp, Facebook } from "lucide-react"
+import { TrendingUp, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DealStats } from "./deal-stats"
 import { useStats } from "@/contexts/stats-provider"
@@ -24,69 +24,37 @@ export function SiteHeader() {
 
           {/* CTA Boxes - Right Side */}
           <div className="flex items-center gap-2">
-            {/* Telegram CTA Box */}
-            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
-              <div className="flex-shrink-0 w-5 h-5 rounded-full overflow-hidden">
+            <a href="https://t.me/+Hqiyu9DN-tg1OWU1" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#0088CC] hover:bg-[#0077B3] text-white flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg shadow-sm font-medium h-auto">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/330px-Telegram_2019_Logo.svg.png"
                   alt="Telegram"
-                  className="w-full h-full object-cover"
+                  className="w-3.5 h-3.5"
                 />
-              </div>
-              
-              <a href="https://t.me/+Hqiyu9DN-tg1OWU1" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="sm"
-                  className="bg-[#0088CC] hover:bg-[#0077B3] text-white flex items-center gap-1 text-xs px-2 py-1"
-                >
-                  <span className="hidden lg:inline">nhóm Telegram</span>
-                  <span className="lg:hidden">Telegram</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Button>
-              </a>
-            </div>
-
-            {/* Zalo CTA Box */}
-            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-sky-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
-              <div className="flex-shrink-0 w-5 h-5 rounded-full overflow-hidden">
+                <span className="hidden lg:inline">Nhóm Telegram</span>
+                <span className="lg:hidden">Telegram</span>
+              </Button>
+            </a>
+            <a href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#0068FF] hover:bg-[#0052CC] text-white flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg shadow-sm font-medium h-auto">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/330px-Icon_of_Zalo.svg.png"
                   alt="Zalo"
-                  className="w-full h-full object-cover"
+                  className="w-3.5 h-3.5"
                 />
-              </div>
-              
-              <a href="https://zalo.me/g/vdbfse702" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="sm"
-                  className="bg-[#0068FF] hover:bg-[#0050C8] text-white flex items-center gap-1 text-xs px-2 py-1"
-                >
-                  <span className="hidden lg:inline">nhóm Zalo</span>
-                  <span className="lg:hidden">Zalo</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Button>
-              </a>
-            </div>
-
-            {/* Facebook CTA Box */}
-            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg px-2.5 py-1.5 border border-blue-100 shadow-sm">
-              <div className="flex-shrink-0 w-5 h-5">
-                <svg viewBox="0 0 24 24" className="w-full h-full fill-[#1877F2]">
+                <span className="hidden lg:inline">Nhóm Zalo</span>
+                <span className="lg:hidden">Zalo</span>
+              </Button>
+            </a>
+            <a href="https://www.facebook.com/groups/2542746036079186/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg shadow-sm font-medium h-auto">
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
-              </div>
-              
-              <a href="https://www.facebook.com/groups/2542746036079186/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="sm"
-                  className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-1 text-xs px-2 py-1"
-                >
-                  <Heart className="w-3 h-3" />
-                  <span className="hidden lg:inline">Nhóm Facebook</span>
-                  <span className="lg:hidden">Facebook</span>
-                </Button>
-              </a>
-            </div>
+                <span className="hidden lg:inline">Nhóm Facebook</span>
+                <span className="lg:hidden">Facebook</span>
+              </Button>
+            </a>
           </div>
         </div>
 
