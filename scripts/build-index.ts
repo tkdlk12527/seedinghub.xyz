@@ -21,7 +21,15 @@ const deals = files.flatMap((f) => {
   const filePath = path.join(DEALS_DIR, f)
   try {
     const raw = fs.readFileSync(filePath, "utf-8")
-    return [JSON.parse(raw)]
+    const parsed = JSON.parse(raw)
+    
+    // Validate required fields
+    if (parsed.id === undefined || parsed.text === undefined || parsed.url === undefined || parsed.time === undefined) {
+      console.warn(`⚠ Skipping file with missing fields: ${f}`)
+      return []
+    }
+    
+    return [parsed]
   } catch (e) {
     console.error(`✗ Skipping malformed file: ${f} — ${(e as Error).message}`)
     return []
